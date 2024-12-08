@@ -10,12 +10,26 @@ function generateRandomInteger(min , max){
 
 function changeRed() {
     start.innerHTML = "CLICCA ORA!";
-    setTimeout(luce1.classList.replace("spenta", "rosso"),20);
-    setTimeout(luce2.classList.replace("spenta", "rosso"),1500);
-    setTimeout(luce3.classList.replace("spenta", "rosso"),1500);
-    setTimeout(luce4.classList.replace("spenta", "rosso"),1500);
-    
+
+    setTimeout(function() {
+        luce1.classList.replace("spenta", "rosso");
+    }, 1000);
+
+    setTimeout(function() {
+        luce2.classList.replace("spenta", "rosso");
+    }, 2200);
+
+    setTimeout(function() {
+        luce3.classList.replace("spenta", "rosso");
+    }, 3400);
+
+    setTimeout(function() {
+        luce4.classList.replace("spenta", "rosso");
+    }, 4300);
+
+
 }
+ 
 
 function changeGreen(){
 
@@ -60,7 +74,7 @@ start.addEventListener("click", function () {
     if (!wait) {
        
         resetLights(); 
-        let delay = generateRandomInteger(1000, 3000); 
+        let delay = generateRandomInteger(4500, 6000); 
         type.innerHTML = "Attenzione...";
         changeRed();
         setTimeout(changeGreen, delay); 
